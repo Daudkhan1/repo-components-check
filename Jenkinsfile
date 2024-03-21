@@ -6,10 +6,10 @@ pipeline {
     }
     
     stages {
-        stage('Get a Maven project') {
+        stage('Docker build image') {
             steps {
                 container('docker') {
-                    sh 'trivy image jenkins/jenkins'
+                    sh 'docker build -t my-image .'
                 }
             }
         }
