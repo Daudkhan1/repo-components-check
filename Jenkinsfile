@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Get a Maven project') {
             steps {
-                container('docker') {
+                container('trivy') {
                     sh 'trivy image jenkins/jenkins'
                 }
             }
