@@ -1,0 +1,8 @@
+pipeline {
+
+  agent {
+    kubernetes {
+      defaultContainer 'goldenalgo'
+      yamlFile 'build.yaml'
+    }
+  }
