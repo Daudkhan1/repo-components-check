@@ -5,11 +5,11 @@ pipeline {
         }
     }
     
-    environment {
-        registry = 'daudidrees/my-image'
-        registryCredential = 'dockerhub'
-        DOCKER_IMAGE_NAME = 'daudidrees/my-image'
-    }
+    // environment {
+    //     registry = 'daudidrees/my-image'
+    //     registryCredential = 'dockerhub'
+    //     DOCKER_IMAGE_NAME = 'daudidrees/my-image'
+    // }
     
     stages {
         stage('Docker build image') {
@@ -34,14 +34,14 @@ pipeline {
                 }
             }
         }
-        stage('docker push image') {
-            steps {
-                script {
-                    docker.withRegistry('https://index.docker.io/v1', registryCredential) {
-                        docker.image(DOCKER_IMAGE_NAME).push()
-                    }
-                }
-            }
-        }
+        // stage('docker push image') {
+        //     steps {
+        //         script {
+        //             docker.withRegistry('https://index.docker.io/v1', registryCredential) {
+        //                 docker.image(DOCKER_IMAGE_NAME).push()
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
