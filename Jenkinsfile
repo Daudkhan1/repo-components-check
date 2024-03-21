@@ -15,7 +15,7 @@ pipeline {
         }
         stage('scan image') {
             steps {
-                container('docker') {
+                container('trivy') {
                     sh 'trivy image my-image'
                 }
             }
