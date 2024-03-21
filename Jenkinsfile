@@ -6,6 +6,13 @@ pipeline {
     }
     
     stages {
+        stage('Docker build image') {
+            steps {
+                container ('docker') {
+                    sh 'docker build my-image .'
+                }
+            }
+        }
         stage('Get a Maven project') {
             steps {
                 container('docker') {
