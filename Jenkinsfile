@@ -8,6 +8,7 @@ pipeline {
     environment {
         registry = 'daudidrees/my-image'
         registryCredential = 'dockerhub'
+        DOCKER_IMAGE_NAME = 'daudidrees/my-image'
     }
     
     stages {
@@ -37,7 +38,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1', registryCredential) {
-                        docker.image('daudidrees/my-image').push()
+                        docker.image(DOCKER_IMAGE_NAME).push()
                     }
                 }
             }
