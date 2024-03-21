@@ -5,11 +5,11 @@ pipeline {
         }
     }
     
-    environment {
-        registry = 'daudidrees/my-image'
-        registryCredential = 'dockerhub'
-        DOCKER_IMAGE_NAME = 'daudidrees/my-image'
-    }
+    // environment {
+    //     registry = 'daudidrees/my-image'
+    //     registryCredential = 'dockerhub'
+    //     DOCKER_IMAGE_NAME = 'daudidrees/my-image'
+    // }
     
     stages {
         stage('Docker build image') {
