@@ -13,10 +13,10 @@ pipeline {
                 }
             }
         }
-        stage('Get a Maven project') {
+        stage('scan image') {
             steps {
                 container('trivy') {
-                    sh 'trivy image jenkins/jenkins'
+                    sh 'trivy image my-image'
                 }
             }
         }
