@@ -16,6 +16,9 @@ spec:
     - name: trivy
       image: aquasec/trivy:latest
       command: ["sleep", "infinity"]  # Example command, adjust as needed
+      volumeMounts:
+        - name: docker-socket
+          mountPath: /var/run/docker.sock
   volumes:
     - name: docker-socket
       hostPath:
