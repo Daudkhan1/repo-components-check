@@ -26,7 +26,13 @@ pipeline {
                 }
             }
         }
-        
+        stage('docker run image') {
+            steps {
+                container ('docker') {
+                    sh 'docker run daudidrees/my-image'
+                }
+            }
+        }
         stage('docker push image') {
             steps {
                 script {
